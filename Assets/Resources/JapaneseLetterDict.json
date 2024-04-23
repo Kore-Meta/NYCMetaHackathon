@@ -1,0 +1,60 @@
+{
+"letters":
+[
+{
+"name": "Ta",
+"audioFilePath": "Audio/Alphabet/Ta",
+"japaneseText": "た"
+},
+{
+"name": "Ma",
+"audioFilePath": "Audio/Alphabet/Ma",
+"japaneseText": "ま"
+},
+{
+"name": "Go",
+"audioFilePath": "Audio/Alphabet/Go",
+"japaneseText": "ご"
+},
+{
+"name": "I",
+"audioFilePath": "Audio/Alphabet/I",
+"japaneseText": "I"
+},
+{
+"name": "Te",
+"audioFilePath": "Audio/Alphabet/Te",
+"japaneseText": "TE"
+},
+{
+"name": "Ke",
+"audioFilePath": "Audio/Alphabet/Ke",
+"japaneseText": "Ke"
+},
+{
+"name": "Shi",
+"audioFilePath": "Audio/Alphabet/Shi",
+"japaneseText": "SHI"
+},
+{
+"name": "Gu",
+"audioFilePath": "Audio/Alphabet/Gu",
+"japaneseText": "GU"
+},
+{
+"name": "Ro",
+"audioFilePath": "Audio/Alphabet/Ro",
+"japaneseText": "RO"
+},
+{
+"name": "E",
+"audioFilePath": "Audio/Alphabet/E",
+"japaneseText": "E"
+},
+{
+"name": "Bi",
+"audioFilePath": "Audio/Alphabet/Bi",
+"japaneseText": "BI"
+}
+]
+}
