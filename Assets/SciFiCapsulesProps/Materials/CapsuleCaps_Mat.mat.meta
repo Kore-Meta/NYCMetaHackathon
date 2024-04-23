@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 6ad05680ff7fd5741aa2fa0fa053dc9f
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 235051
+  packageName: SciFi Capsules Props
+  packageVersion: 1.0
+  assetPath: Assets/SciFiCapsulesProps/Materials/CapsuleCaps_Mat.mat
+  uploadId: 539359

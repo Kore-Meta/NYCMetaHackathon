@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: c83b6a4cd59477848919d204c9bac384
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 235051
+  packageName: SciFi Capsules Props
+  packageVersion: 1.0
+  assetPath: Assets/SciFiCapsulesProps/Materials/Glass_Mat.mat
+  uploadId: 539359
