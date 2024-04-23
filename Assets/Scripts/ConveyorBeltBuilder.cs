@@ -30,6 +30,11 @@ public class ConveyorBeltBuilder : MonoBehaviour
     public UnityEvent Evt_OnBeltBuilt;
     public UnityEvent Evt_OnBeltDestroyed;
 
+    [SerializeField] private HandTrackingManager _handTrackingManager;
+    [SerializeField] private LayerMask meshLayerMask;
+    private OVRHand _dominantHand;
+    private (Vector3 point, Vector3 normal, bool hit) _rightHandHit;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,6 +42,14 @@ public class ConveyorBeltBuilder : MonoBehaviour
         pathPoints = new Vector3[numberOfPoints];
         normalVecs = new Vector3[numberOfPoints];
         belt = Instantiate(beltPrefab);
+#if UNITY_EDITOR
+#else
+        if (_handTrackingManager == null)
+        {
+            _handTrackingManager = GameStateMachine.Instance.HandTrackingManager;
+            _dominantHand = _handTrackingManager.GetDominateHand();
+        }
+#endif
     }
 
     // Update is called once per frame
@@ -85,32 +98,33 @@ public class ConveyorBeltBuilder : MonoBehaviour
         portal1 = Instantiate(portalPrefab, Vector3.right, Quaternion.identity);
         portal2 = Instantiate(portalPrefab, -Vector3.right, Quaternion.identity);
 #else
-        Vector3 controllerPos = OVRInput.GetLocalControllerPosition(OVRInput.Controller.RTouch);
-        Quaternion controllerRot = OVRInput.GetLocalControllerRotation(OVRInput.Controller.RTouch);
-        Vector3 rayDirection = controllerRot * Vector3.forward;
-        if (Physics.Raycast(controllerPos, rayDirection, out RaycastHit hit))
-        {
-            currentPreview.transform.position = hit.point;
-            currentPreview.transform.rotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
+        HandleHitDetectionHands();
+        //Vector3 controllerPos = OVRInput.GetLocalControllerPosition(OVRInput.Controller.RTouch);
+        //Quaternion controllerRot = OVRInput.GetLocalControllerRotation(OVRInput.Controller.RTouch);
+        //Vector3 rayDirection = controllerRot * Vector3.forward;
+        //if (Physics.Raycast(controllerPos, rayDirection, out RaycastHit hit))
+        //{
+        //    currentPreview.transform.position = hit.point;
+        //    currentPreview.transform.rotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
 
-            // TODO: ask meta why this line fails sometimes
-            OVRSemanticClassification anchor = hit.collider.gameObject.GetComponent<OVRSemanticClassification>();
-            //if (anchor != null)
-            //{
-                //Debug.Log($"anchor label: { string.Join(", ", anchor.Labels)}");
-                if (OVRInput.GetDown(OVRInput.Button.One))
-                {
-                    if (portal1 == null)
-                    {
-                        portal1 = Instantiate(portalPrefab, currentPreview.transform.position, currentPreview.transform.rotation);
-                    }
-                    else
-                    {
-                        portal2 = Instantiate(portalPrefab, currentPreview.transform.position, currentPreview.transform.rotation);
-                    }
-                }
-            //}
-        }
+        //    // TODO: ask meta why this line fails sometimes
+        //    OVRSemanticClassification anchor = hit.collider.gameObject.GetComponent<OVRSemanticClassification>();
+        //    //if (anchor != null)
+        //    //{
+        //        //Debug.Log($"anchor label: { string.Join(", ", anchor.Labels)}");
+        //        if (OVRInput.GetDown(OVRInput.Button.One))
+        //        {
+        //            if (portal1 == null)
+        //            {
+        //                portal1 = Instantiate(portalPrefab, currentPreview.transform.position, currentPreview.transform.rotation);
+        //            }
+        //            else
+        //            {
+        //                portal2 = Instantiate(portalPrefab, currentPreview.transform.position, currentPreview.transform.rotation);
+        //            }
+        //        }
+        //    //}
+        //}
 #endif
     }
 
@@ -315,4 +329,37 @@ public class ConveyorBeltBuilder : MonoBehaviour
         belt.SetUpBelt(pathPoints, normalVecs, m1, m2);
         belt.ShowPath();
     }
+
+#if UNITY_EDITOR
+#else
+    private void HandleHitDetectionHands()
+    {
+        CheckRaycastHit(_dominantHand, out _rightHandHit);
+
+        if (currentPreview != null && _rightHandHit.hit)
+        {
+            currentPreview.transform.position = _rightHandHit.point;
+            currentPreview.transform.rotation = Quaternion.FromToRotation(Vector3.up, _rightHandHit.normal);
+            if (_handTrackingManager.IsPinching())
+            {
+                if (portal1 == null)
+                {
+                    portal1 = Instantiate(portalPrefab, currentPreview.transform.position, currentPreview.transform.rotation);
+                }
+                else
+                {
+                    portal2 = Instantiate(portalPrefab, currentPreview.transform.position, currentPreview.transform.rotation);
+                    Destroy(currentPreview);
+                }
+            }
+        }
+    }
+
+    private void CheckRaycastHit(OVRHand hand, out (Vector3 point, Vector3 normal, bool hit) raycastHit)
+    {
+        Ray ray = new Ray(hand.PointerPose.position, hand.PointerPose.forward);
+        bool success = Physics.Raycast(ray, out RaycastHit hitInfo, 100.0f, meshLayerMask);
+        raycastHit = (hitInfo.point, hitInfo.normal, success);
+    }
+#endif
 }

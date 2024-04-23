@@ -6,11 +6,13 @@ public class GameStateMachine : MonoBehaviour
 {
     public static GameStateMachine Instance { get; private set; }
 
+    [SerializeField] private HandTrackingManager handTrackingManager;
     [SerializeField] private YokaiManager yokaiManager;
     [SerializeField] private ConveyorBeltBuilder conveyorBeltBuilder;
     [SerializeField] private LetterBallHandler letterBallHandler;
     [SerializeField] private CookingManager cookingManager;
 
+    public HandTrackingManager HandTrackingManager => handTrackingManager;
     public YokaiManager YokaiManager => yokaiManager;
     public ConveyorBeltBuilder ConveyorBeltBuilder => conveyorBeltBuilder;
     public LetterBallHandler LetterBallHandler => letterBallHandler;
