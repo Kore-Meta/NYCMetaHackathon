@@ -6,6 +6,7 @@ TagManager:
   tags:
   - LetterBall
   - SamplesInfoPanel
+  - Dish
   layers:
   - Default
   - TransparentFX

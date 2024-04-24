@@ -11313,6 +11313,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1880195192465186265, guid: 719891b3bbc5e429c9315ebfcf5823b9,
         type: 3}
+      propertyPath: useVoice
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880195192465186265, guid: 719891b3bbc5e429c9315ebfcf5823b9,
+        type: 3}
       propertyPath: questionSO
       value: 
       objectReference: {fileID: 0}
