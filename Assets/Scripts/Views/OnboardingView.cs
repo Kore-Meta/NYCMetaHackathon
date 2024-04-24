@@ -7,10 +7,10 @@ public class OnboardingView : BaseView
 {
     public UnityEvent EvtStartGamePressed;
 
-    public void ButtonEvt_StartGame()
-    {
-        EvtStartGamePressed.Invoke();
-    }
+    //public void ButtonEvt_StartGame()
+    //{
+    //    EvtStartGamePressed.Invoke();
+    //}
 
     public override void ShowView()
     {

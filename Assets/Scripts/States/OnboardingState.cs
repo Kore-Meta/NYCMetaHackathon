@@ -10,6 +10,9 @@ public class OnboardingState : BaseState
         GameStateMachine.Instance.YokaiManager.InstantiateYokai();
         ViewController.Instance.OnboardingView.ShowView();
         ViewController.Instance.OnboardingView.EvtStartGamePressed.AddListener(OnStartGame);
+
+        float waitTime = GameStateMachine.Instance.YokaiManager.ActivateYokaiState(YokaiState.Onboarding);
+        ViewController.Instance.Invoke("AdvanceView", waitTime);
     }
 
     public override void ExitState()
@@ -21,6 +24,6 @@ public class OnboardingState : BaseState
 
     private void OnStartGame()
     {
-        GameStateMachine.Instance.ChangeState(new PlacementState());
+        GameStateMachine.Instance.AdvanceState();
     }
 }

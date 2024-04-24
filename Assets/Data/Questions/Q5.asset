@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lettersInQuestion: 010000000200000003000000
   extraLetters: 04000000050000000600000007000000
-  foodPrefab: {fileID: 5559830016796758804, guid: 5fdb9218379ce0a40aa5414e14f02989,
+  foodPrefab: {fileID: 5559830016796758804, guid: f12bd185c545d46378105cc4f674f9e7,
     type: 3}

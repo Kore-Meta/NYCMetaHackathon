@@ -30,7 +30,7 @@ public class PlacementState : BaseState
             return;
         }
         GameStateMachine.Instance.CookingManager.DisableChefStationGrabbable();
-        GameStateMachine.Instance.ChangeState(new OrderState());
+        GameStateMachine.Instance.AdvanceState();
     }
 
     private void OnPlacementReset()

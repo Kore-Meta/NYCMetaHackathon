@@ -11,8 +11,6 @@ public class LetterBall : MonoBehaviour
     public JapaneseLetter japaneseLetter;
     private bool canPlayAudio = true;
 
-    private JapaneseLetterDataLoader letterDataLoader;
-
     public void PlayAudio()
     {
         if (canPlayAudio)
@@ -36,9 +34,8 @@ public class LetterBall : MonoBehaviour
     {
         isPickedUp = false;
         canPlayAudio = true;
-        letterDataLoader = FindFirstObjectByType<JapaneseLetterDataLoader>();
-        audioSource.clip = Resources.Load<AudioClip>(letterDataLoader.lettersDict[letter].audioFilePath);
-        text.text = letterDataLoader.lettersDict[letter].japaneseText;
+        audioSource.clip = Resources.Load<AudioClip>(JapaneseLetterDataLoader.Instance.lettersDict[letter].audioFilePath);
+        text.text = JapaneseLetterDataLoader.Instance.lettersDict[letter].japaneseText;
         japaneseLetter = letter;
     }
 

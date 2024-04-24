@@ -9,6 +9,8 @@ public class GoodbyeState : BaseState
         base.EnterState();
         ViewController.Instance.GoodbyeView.ShowView();
         ViewController.Instance.GoodbyeView.EvtNextYokaiPressed.AddListener(OnNextYokai);
+
+        GameStateMachine.Instance.YokaiManager.ActivateYokaiState(YokaiState.Goodbye);
     }
 
     public override void ExitState()
@@ -23,8 +25,10 @@ public class GoodbyeState : BaseState
         GameStateMachine.Instance.YokaiManager.DestroyCurrentYokai();
         GameStateMachine.Instance.LetterBallHandler.ResetAll();
         GameStateMachine.Instance.CookingManager.ResetAll();
-
         if (GameStateMachine.Instance.YokaiManager.InstantiateYokai())
-            GameStateMachine.Instance.ChangeState(new OrderState());
+        {
+            GameStateMachine.Instance.GoToOrderState();
+            ViewController.Instance.GoToOrderView();
+        }
     }
 }

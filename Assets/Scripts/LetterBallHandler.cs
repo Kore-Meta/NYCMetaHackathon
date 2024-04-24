@@ -132,14 +132,15 @@ public class LetterBallHandler : MonoBehaviour
                 ballPositions[i] -= ballPathLength;
             }
             balls[i].transform.position = GetBallPositionOnBelt(ballPositions[i]);
-            if (ballPositions[i] < 0 || ballPositions[i] > beltBuilder.belt.pathLength)
-            {
-                balls[i].gameObject.SetActive(false);
-            }
-            else
-            {
-                balls[i].gameObject.SetActive(true);
-            }
+            // TODO: I'm not able to fix this for now
+            //if (ballPositions[i] < 0 || ballPositions[i] > beltBuilder.belt.pathLength)
+            //{
+            //    balls[i].gameObject.SetActive(false);
+            //}
+            //else
+            //{
+            //    balls[i].gameObject.SetActive(true);
+            //}
         }
     }
 

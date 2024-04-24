@@ -20,6 +20,6 @@ public class MainMenuState : BaseState
 
     private void OnStartGame()
     {
-        GameStateMachine.Instance.ChangeState(new OnboardingState());
+        GameStateMachine.Instance.AdvanceState();
     }
 }
