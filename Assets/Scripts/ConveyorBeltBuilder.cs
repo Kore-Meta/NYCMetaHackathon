@@ -95,9 +95,9 @@ public class ConveyorBeltBuilder : MonoBehaviour
         }
 
 #if UNITY_EDITOR
-        portal1 = Instantiate(portalPrefab, Vector3.right, Quaternion.identity);
-        portal2 = Instantiate(portalPrefab, -Vector3.right, Quaternion.identity);
-#else
+        //portal1 = Instantiate(portalPrefab, Vector3.right, Quaternion.identity);
+        //portal2 = Instantiate(portalPrefab, -Vector3.right, Quaternion.identity);
+//#else
         //HandleHitDetectionHands();
         Vector3 controllerPos = OVRInput.GetLocalControllerPosition(OVRInput.Controller.RTouch);
         Quaternion controllerRot = OVRInput.GetLocalControllerRotation(OVRInput.Controller.RTouch);
