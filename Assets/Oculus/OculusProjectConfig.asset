@@ -30,7 +30,6 @@ MonoBehaviour:
   enableNSCConfig: 1
   securityXmlPath: 
   skipUnneededShaders: 0
-  enableIL2CPPLTO: 0
   focusAware: 1
   requiresSystemKeyboard: 0
   experimentalFeaturesEnabled: 0
@@ -40,5 +39,5 @@ MonoBehaviour:
   systemSplashScreen: {fileID: 0}
   systemSplashScreenType: 0
   _systemLoadingScreenBackground: 0
-  ovrPluginMd5Win64: e8cfe66d40bc858ac6a51dd265d3b2f7403799208da6330a72f7d559fb29c385
-  ovrPluginMd5Android: c7bb9a379e186c4b2726b69bbb7d3ace3d1ba67176227aa24794dc7667967535
+  ovrPluginMd5Win64: e2f96821b9509a5aaf6b44cbb1768183ad0bd4b4c348e7a3659bdebe87df909c
+  ovrPluginMd5Android: b11c9996e5f49cf2c13b34f2f4bb8d16b19abc68ff072bb1f39791850fdf9b28
