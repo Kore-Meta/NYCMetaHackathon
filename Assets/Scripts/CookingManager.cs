@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Meta.Voice.Samples.Dictation;
+using TMPro;
 
 public class CookingManager : MonoBehaviour
 {
@@ -11,14 +13,20 @@ public class CookingManager : MonoBehaviour
     public bool isCookingDone;
     private GameObject dish;
 
+    private string dictationText;
+    public string DictationText
+    {
+        get { return dictationText; }
+        set { dictationText = value; }
+    }
+    private string questionTxt;
+    [SerializeField] private DictationActivation dictationActivation;
+
+    public TextMeshPro text4Debugging;
+
     // Start is called before the first frame update
     void Start()
     {
-        if (chefStation != null && questionSO != null)
-        {
-            SetOrderText();
-            chefStation.EvtCookBtnPressed.AddListener(Cook);
-        }
         isCookingDone = false;
     }
 
@@ -33,8 +41,8 @@ public class CookingManager : MonoBehaviour
         if (chefStation == null)
         {
             chefStation = Instantiate(chefStationPrefab, new Vector3(0.5f, 1f, 0.5f), Quaternion.Euler(0, 90, 0));
-            chefStation.EvtCookBtnPressed.AddListener(Cook);
         }
+        chefStation.EvtCookBtnPressed.AddListener(Cook);
     }
 
     public void DisableChefStationGrabbable()
@@ -42,9 +50,39 @@ public class CookingManager : MonoBehaviour
         chefStation.DisableGrab();
     }
 
-    public void Cook()
+    public void CheckCookResults()
     {
-        if (CheckIfCanCook())
+        dictationText = dictationText.Replace(" ", "")  // Remove spaces
+                                   .Replace("，", "") // Remove comma
+                                   .Replace("、", "") // Remove ideographic comma
+                                   .Replace("；", ""); // Remove semicolon
+        chefStation.cookButtonText.text = "You said:" + dictationText + "\n";
+        Debug.Log(questionTxt + "  " + dictationText);
+        bool isVoiceCorrect = false;
+        if (dictationText == questionTxt)
+        {
+             isVoiceCorrect = true;
+        }
+
+        bool isIngredientsComplete = CheckIfIngredientsComplete();
+        if (!isIngredientsComplete || !isVoiceCorrect)
+        {
+            chefStation.failedAudio.Play();
+            if (!isIngredientsComplete)
+            {
+                chefStation.cookButtonText.text += "Ingredients ";
+                if (!isVoiceCorrect)
+                {
+                    chefStation.cookButtonText.text += "and pronouciation ";
+                }
+                chefStation.cookButtonText.text += "not right! Try again!\n";
+            }
+            else
+            {
+                chefStation.cookButtonText.text += "Pronounciation not right! Try again!\n";
+            }
+        }
+        else
         {
             dish = Instantiate(questionSO.foodPrefab, chefStation.plateTransform.position, Quaternion.identity);
             chefStation.successAudio.Play();
@@ -52,23 +90,31 @@ public class CookingManager : MonoBehaviour
             {
                 socket.Reset();
             }
+            chefStation.cookButtonText.text += "Ingredients and pronounciation both correct!";
             isCookingDone = true;
         }
-        else
+    }
+
+    public void Cook()
+    {
+        dictationActivation.ToggleActivation();
+        Debug.Log("hello?");
+        if (text4Debugging != null)
         {
-            chefStation.failedAudio.Play();
+            text4Debugging.text = "hello?";
         }
     }
-    private bool CheckIfCanCook()
+
+    private bool CheckIfIngredientsComplete()
     {
-        bool canCook = true;
+        bool isIngredientsComplete = true;
         int i;
         for (i = 0; i < questionSO.lettersInQuestion.Length; i++)
         {
             Debug.Log(questionSO.lettersInQuestion[i] + "; " + chefStation.letterSockets[i].japaneseLetter);
             if (questionSO.lettersInQuestion[i] != chefStation.letterSockets[i].japaneseLetter)
             {
-                canCook = false;
+                isIngredientsComplete = false;
                 break;
             }
         }
@@ -78,25 +124,33 @@ public class CookingManager : MonoBehaviour
             {
                 if (chefStation.letterSockets[i].japaneseLetter != JapaneseLetter.Null)
                 {
-                    canCook = false;
+                    isIngredientsComplete = false;
                     break;
                 }
                 i++;
             }
         }
-        return canCook;
+        return isIngredientsComplete;
     }
 
     public void SetOrderText()
     {
         chefStation.orderText.text = "";
+        chefStation.cookButtonText.text = "";
+        questionTxt = "";
         if (questionSO != null)
         {
             chefStation.orderText.text = "You got order:\n";
+            chefStation.cookButtonText.text = "Press button and say\n";
             foreach (var letter in questionSO.lettersInQuestion)
             {
-                chefStation.orderText.text += letter + " ";
+                Debug.Log(JapaneseLetterDataLoader.Instance.lettersDict);
+                Debug.Log(letter);
+                chefStation.orderText.text += JapaneseLetterDataLoader.Instance.lettersDict[letter].japaneseText + "(" + letter + ") ";
+                chefStation.cookButtonText.text += JapaneseLetterDataLoader.Instance.lettersDict[letter].japaneseText + "(" + letter + ") -- ";
+                questionTxt += JapaneseLetterDataLoader.Instance.lettersDict[letter].japaneseText;
             }
+            chefStation.cookButtonText.text += "\nto cook";
         }
     }
 

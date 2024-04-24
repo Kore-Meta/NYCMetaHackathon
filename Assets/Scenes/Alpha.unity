@@ -12022,6 +12022,102 @@ Transform:
   m_Children: []
   m_Father: {fileID: 576644249}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1085944979
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1524183421}
+    m_Modifications:
+    - target: {fileID: 1880195192465186265, guid: 719891b3bbc5e429c9315ebfcf5823b9,
+        type: 3}
+      propertyPath: questionSO
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880195192465186265, guid: 719891b3bbc5e429c9315ebfcf5823b9,
+        type: 3}
+      propertyPath: text4Debugging
+      value: 
+      objectReference: {fileID: 1339958230}
+    - target: {fileID: 6099941741115378560, guid: 719891b3bbc5e429c9315ebfcf5823b9,
+        type: 3}
+      propertyPath: m_Name
+      value: CookingManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 7674826038405986162, guid: 719891b3bbc5e429c9315ebfcf5823b9,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.81385946
+      objectReference: {fileID: 0}
+    - target: {fileID: 7674826038405986162, guid: 719891b3bbc5e429c9315ebfcf5823b9,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.93256384
+      objectReference: {fileID: 0}
+    - target: {fileID: 7674826038405986162, guid: 719891b3bbc5e429c9315ebfcf5823b9,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.186
+      objectReference: {fileID: 0}
+    - target: {fileID: 7674826038405986162, guid: 719891b3bbc5e429c9315ebfcf5823b9,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7674826038405986162, guid: 719891b3bbc5e429c9315ebfcf5823b9,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7674826038405986162, guid: 719891b3bbc5e429c9315ebfcf5823b9,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7674826038405986162, guid: 719891b3bbc5e429c9315ebfcf5823b9,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7674826038405986162, guid: 719891b3bbc5e429c9315ebfcf5823b9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7674826038405986162, guid: 719891b3bbc5e429c9315ebfcf5823b9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7674826038405986162, guid: 719891b3bbc5e429c9315ebfcf5823b9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 719891b3bbc5e429c9315ebfcf5823b9, type: 3}
+--- !u!4 &1085944980 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7674826038405986162, guid: 719891b3bbc5e429c9315ebfcf5823b9,
+    type: 3}
+  m_PrefabInstance: {fileID: 1085944979}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1085944981 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1880195192465186265, guid: 719891b3bbc5e429c9315ebfcf5823b9,
+    type: 3}
+  m_PrefabInstance: {fileID: 1085944979}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 447047dc56b87954a9aabe5d318d88c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1087406417
 GameObject:
   m_ObjectHideFlags: 0
@@ -14074,55 +14170,6 @@ Transform:
   - {fileID: 1772280341}
   m_Father: {fileID: 1716059294}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1213318579
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1213318580}
-  - component: {fileID: 1213318581}
-  m_Layer: 0
-  m_Name: CookingManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1213318580
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1213318579}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1524183421}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1213318581
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1213318579}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 447047dc56b87954a9aabe5d318d88c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  questionSO: {fileID: 0}
-  chefStationPrefab: {fileID: 7884375664515925287, guid: 2f9bb1b7cffb1ee4284671cccc3d8288,
-    type: 3}
-  chefStation: {fileID: 0}
-  isCookingDone: 0
 --- !u!1 &1216112892
 GameObject:
   m_ObjectHideFlags: 0
@@ -15868,7 +15915,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1339958230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18379,7 +18426,7 @@ Transform:
   - {fileID: 1400487140}
   - {fileID: 1246452080}
   - {fileID: 147271774}
-  - {fileID: 1213318580}
+  - {fileID: 1085944980}
   - {fileID: 1797525161}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -19640,7 +19687,7 @@ MonoBehaviour:
   yokaiManager: {fileID: 147271775}
   conveyorBeltBuilder: {fileID: 1400487141}
   letterBallHandler: {fileID: 1246452079}
-  cookingManager: {fileID: 1213318581}
+  cookingManager: {fileID: 1085944981}
   isTutorialMode: 1
 --- !u!1 &1619332986
 GameObject:

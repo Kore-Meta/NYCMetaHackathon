@@ -34,8 +34,22 @@ public class LetterData
 
 public class JapaneseLetterDataLoader : MonoBehaviour
 {
+    public static JapaneseLetterDataLoader Instance;
+
     public Dictionary<JapaneseLetter, LetterData> lettersDict;
     public TextMeshPro text4Debugging;
+
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+        }
+    }
 
     void LoadAndInitializeData()
     {
@@ -75,7 +89,6 @@ public class JapaneseLetterDataLoader : MonoBehaviour
     {
         // Initialize the dictionary by loading JSON data
         LoadAndInitializeData();
-
     }
 
     // Update is called once per frame

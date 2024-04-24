@@ -11,6 +11,7 @@ public class ChefStation : MonoBehaviour
     public AudioSource successAudio;
     public AudioSource failedAudio;
     public TextMeshProUGUI orderText;
+    public TextMeshProUGUI cookButtonText;
 
     public UnityEvent EvtCookBtnPressed;
 
