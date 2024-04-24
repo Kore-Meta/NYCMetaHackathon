@@ -1,18 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Yokai : MonoBehaviour
 {
-    [SerializeField] private GameObject onboardingPanel;
-    [SerializeField] private GameObject orderPanel;
-    [SerializeField] private GameObject servePanel;
-    [SerializeField] private GameObject goodbyePanel;
+    [SerializeField] private GameObject onboardingPanel = null;
+    [SerializeField] private GameObject orderPanel = null;
+    [SerializeField] private GameObject servePanel = null;
+    [SerializeField] private GameObject goodbyePanel = null;
+
+    [SerializeField] private AudioClip onboardingAudio = null;
+    [SerializeField] private AudioClip orderAudio = null;
+    [SerializeField] private AudioClip serveAudio = null;
+    [SerializeField] private AudioClip goodbyeAudio = null;
+
+    [SerializeField] private AudioSource audioSource;
+
+    public UnityEvent EvtOnFoodReceived;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        //DisableAllPanels();
     }
 
     // Update is called once per frame
@@ -21,35 +31,92 @@ public class Yokai : MonoBehaviour
         
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Dish")
+        {
+            EvtOnFoodReceived.Invoke();
+        }
+    }
+
+    public float ActivateState(YokaiState yokaiState)
+    {
+        switch (yokaiState)
+        {
+            case YokaiState.Onboarding:
+                return ShowOnboardingPanel();
+            case YokaiState.Order:
+                return ShowOrderPanel();
+            case YokaiState.WaitToBeServed:
+                return ShowServePanel();
+            case YokaiState.Goodbye:
+                return ShowGoodbyePanel();
+            default:
+                return 0;
+        }
+    }
+
     public void DisableAllPanels()
     {
-        onboardingPanel.SetActive(false);
-        orderPanel.SetActive(false);
-        servePanel.SetActive(false);
-        goodbyePanel.SetActive(false);
+        if (onboardingPanel != null)
+            onboardingPanel.SetActive(false);
+        if (orderPanel != null)
+            orderPanel.SetActive(false);
+        if (servePanel != null)
+            servePanel.SetActive(false);
+        if (goodbyePanel != null)
+            goodbyePanel.SetActive(false);
     }
 
-    public void ShowOnboardingPanel()
+    public float ShowOnboardingPanel()
     {
         DisableAllPanels();
-        onboardingPanel.SetActive(true);
+        if (onboardingPanel != null)
+            onboardingPanel.SetActive(true);
+        if (onboardingAudio != null)
+        {
+            audioSource.clip = onboardingAudio;
+            audioSource.Play();
+        }
+        return onboardingAudio ? onboardingAudio.length : 0;
     }
 
-    public void ShowOrderPanel()
+    public float ShowOrderPanel()
     {
         DisableAllPanels();
-        orderPanel.SetActive(true);
+        if (orderPanel != null)
+            orderPanel.SetActive(true);
+        if (orderAudio != null)
+        {
+            audioSource.clip = orderAudio;
+            audioSource.Play();
+        }
+        return orderAudio ? orderAudio.length : 0;
     }
 
-    public void ShowServePanel()
+    public float ShowServePanel()
     {
         DisableAllPanels();
-        servePanel.SetActive(true);
+        if (servePanel != null)
+            servePanel.SetActive(true);
+        if (serveAudio != null)
+        {
+            audioSource.clip = serveAudio;
+            audioSource.Play();
+        }
+        return serveAudio ? serveAudio.length : 0;
     }
 
-    public void ShowGoodbyePanel()
+    public float ShowGoodbyePanel()
     {
         DisableAllPanels();
-        goodbyePanel.SetActive(true);
+        if (goodbyePanel != null)
+            goodbyePanel.SetActive(true);
+        if (goodbyeAudio != null)
+        {
+            audioSource.clip = goodbyeAudio;
+            audioSource.Play();
+        }
+        return goodbyeAudio ? goodbyeAudio.length : 0;
     }
 }

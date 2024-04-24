@@ -13,3 +13,22 @@ public enum JapaneseLetter
     E,
     Bi
 }
+
+public enum YokaiState
+{
+    Onboarding,
+    Order,
+    WaitToBeServed,
+    Goodbye
+}
+
+public enum GameStateName
+{
+    MainMenu,
+    Onboarding,
+    Placement,
+    Order,
+    GrabAndCook,
+    Serve,
+    Goodbye
+}

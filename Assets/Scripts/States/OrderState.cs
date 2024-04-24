@@ -9,6 +9,9 @@ public class OrderState : BaseState
         base.EnterState();
         ViewController.Instance.OrderView.ShowView();
         ViewController.Instance.OrderView.EvtPlaceOrderPressed.AddListener(OnPlaceOrderComplete);
+
+        float waitTime = GameStateMachine.Instance.YokaiManager.ActivateYokaiState(YokaiState.Order);
+        ViewController.Instance.Invoke("AdvanceView", waitTime);
     }
 
     public override void ExitState()
@@ -26,6 +29,6 @@ public class OrderState : BaseState
         GameStateMachine.Instance.CookingManager.questionSO = GameStateMachine.Instance.YokaiManager.GetCurrentQuestion();
         GameStateMachine.Instance.CookingManager.SetOrderText();
         
-        GameStateMachine.Instance.ChangeState(new GrabAndCookState());
+        GameStateMachine.Instance.AdvanceState();
     }
 }

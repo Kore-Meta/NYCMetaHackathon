@@ -19,6 +19,7 @@ public class GameStateMachine : MonoBehaviour
     public CookingManager CookingManager => cookingManager;
 
     private BaseState _currentState;
+    private GameStateName _currentStateName;
 
     public bool isTutorialMode = true;
 
@@ -37,6 +38,7 @@ public class GameStateMachine : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        _currentStateName = GameStateName.MainMenu;
         ChangeState(new MainMenuState());
     }
 
@@ -46,10 +48,67 @@ public class GameStateMachine : MonoBehaviour
         
     }
 
-    public void ChangeState(BaseState newState)
+    public void GoToOrderState()
+    {
+        _currentState?.ExitState();
+        _currentState = new OrderState();
+        _currentState.EnterState();
+        _currentStateName = GameStateName.Order;
+    }
+
+    private void ChangeState(BaseState newState)
     {
         _currentState?.ExitState();
         _currentState = newState;
         _currentState.EnterState();
+    }
+
+    public void AdvanceState()
+    {
+        switch (_currentStateName)
+        {
+            case GameStateName.MainMenu:
+                ChangeState(new OnboardingState());
+                _currentStateName = GameStateName.Onboarding;
+                Debug.Log(_currentStateName);
+                break;
+
+            case GameStateName.Onboarding:
+                ChangeState(new PlacementState());
+                _currentStateName = GameStateName.Placement;
+                Debug.Log(_currentStateName);
+                break;
+
+            case GameStateName.Placement:
+                ChangeState(new OrderState());
+                _currentStateName = GameStateName.Order;
+                Debug.Log(_currentStateName);
+                break;
+
+            case GameStateName.Order:
+                ChangeState(new GrabAndCookState());
+                _currentStateName = GameStateName.GrabAndCook;
+                Debug.Log(_currentStateName);
+                break;
+
+            case GameStateName.GrabAndCook:
+                ChangeState(new ServeState());
+                _currentStateName = GameStateName.Serve;
+                Debug.Log(_currentStateName);
+                break;
+
+            case GameStateName.Serve:
+                ChangeState(new GoodbyeState());
+                _currentStateName = GameStateName.Goodbye;
+                Debug.Log(_currentStateName);
+                break;
+
+            case GameStateName.Goodbye:
+                Debug.Log(_currentStateName);
+                break;
+
+            default:
+                break;
+        }
     }
 }

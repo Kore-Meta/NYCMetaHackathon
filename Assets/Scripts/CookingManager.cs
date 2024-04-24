@@ -3,14 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using Meta.Voice.Samples.Dictation;
 using TMPro;
+using UnityEngine.Events;
 
 public class CookingManager : MonoBehaviour
 {
+    [SerializeField] private bool useVoice = false;
+
     public QuestionSO questionSO;
     public ChefStation chefStationPrefab;
     [SerializeField] private ChefStation chefStation;
 
     public bool isCookingDone;
+    public UnityEvent EvtCookingDone;
     private GameObject dish;
 
     private string dictationText;
@@ -90,19 +94,50 @@ public class CookingManager : MonoBehaviour
             {
                 socket.Reset();
             }
-            chefStation.cookButtonText.text += "Ingredients and pronounciation both correct!";
+            chefStation.cookButtonText.text += "Ingredients and pronounciation both correct! Food Cooked!";
             isCookingDone = true;
+            EvtCookingDone.Invoke();
         }
     }
 
     public void Cook()
     {
-        dictationActivation.ToggleActivation();
-        Debug.Log("hello?");
-        if (text4Debugging != null)
+        if (useVoice)
         {
-            text4Debugging.text = "hello?";
+            dictationActivation.ToggleActivation();
         }
+        else
+        {
+            if (!CheckIfIngredientsComplete())
+            {
+                chefStation.failedAudio.Play();
+                chefStation.cookButtonText.text = "Ingredients not right! Try again!\n";
+            }
+            else
+            {
+                dish = Instantiate(questionSO.foodPrefab, chefStation.plateTransform.position, Quaternion.identity);
+                chefStation.successAudio.Play();
+                foreach (var socket in chefStation.letterSockets)
+                {
+                    socket.Reset();
+                }
+                chefStation.cookButtonText.text += "Ingredients correct! Food Cooked!";
+                isCookingDone = true;
+                EvtCookingDone.Invoke();
+            }
+        }
+        //Debug.Log("hello?");
+        //if (text4Debugging != null)
+        //{
+        //    text4Debugging.text = "hello?";
+        //}
+    }
+
+    public void DebugCook()
+    {
+        isCookingDone = true;
+        dish = Instantiate(questionSO.foodPrefab, chefStation.plateTransform.position, Quaternion.identity);
+        EvtCookingDone.Invoke();
     }
 
     private bool CheckIfIngredientsComplete()

@@ -6,21 +6,15 @@ using UnityEngine.Events;
 public class GoodbyeView : BaseView
 {
     public UnityEvent EvtNextYokaiPressed;
+    public UnityEvent EvtBackToMainMenuPressed;
 
     public void ButtonEvt_NextYokai()
     {
         EvtNextYokaiPressed.Invoke();
     }
 
-    // Start is called before the first frame update
-    void Start()
+    public void ButtonEvt_BackToMainMenu()
     {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+        EvtBackToMainMenuPressed.Invoke();
     }
 }

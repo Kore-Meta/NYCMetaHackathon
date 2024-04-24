@@ -7,20 +7,14 @@ public class ServeView : BaseView
 {
     public UnityEvent EvtServePressed;
 
-    public void ButtonEvt_Serve()
+    // public void ButtonEvt_Serve()
+    // {
+    //     EvtServePressed.Invoke();
+    // }
+
+    public void DebugServe()
     {
-        EvtServePressed.Invoke();
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+        GameObject dish = GameObject.FindWithTag("Dish");
+        dish.GetComponent<Rigidbody>().MovePosition(FindFirstObjectByType<Yokai>().transform.position);
     }
 }

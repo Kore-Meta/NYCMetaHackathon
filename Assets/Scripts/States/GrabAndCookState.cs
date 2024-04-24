@@ -9,11 +9,16 @@ public class GrabAndCookState : BaseState
         base.EnterState();
         ViewController.Instance.GrabAndCookView.ShowView();
         ViewController.Instance.GrabAndCookView.EvtCookCompletePressed.AddListener(OnCookComplete);
+
+        GameStateMachine.Instance.CookingManager.EvtCookingDone.AddListener(OnCookComplete);
     }
 
     public override void ExitState()
     {
         base.ExitState();
+
+        GameStateMachine.Instance.CookingManager.EvtCookingDone.RemoveListener(OnCookComplete);
+
         ViewController.Instance.GrabAndCookView.EvtCookCompletePressed.RemoveListener(OnCookComplete);
         ViewController.Instance.GrabAndCookView.HideView();
     }
@@ -22,7 +27,8 @@ public class GrabAndCookState : BaseState
     {
         if (GameStateMachine.Instance.CookingManager.isCookingDone)
         {
-            GameStateMachine.Instance.ChangeState(new ServeState());
+            GameStateMachine.Instance.AdvanceState();
+            ViewController.Instance.AdvanceView();
         }
     }
 }

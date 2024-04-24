@@ -8,10 +8,10 @@ public class PlacementView : BaseView
     public UnityEvent EvtPlacementCompletePressed;
     public UnityEvent EvtPlacementResetPressed;
 
-    public void ButtonEvt_PlacementComplete()
-    {
-        EvtPlacementCompletePressed.Invoke();
-    }
+    // public void ButtonEvt_PlacementComplete()
+    // {
+    //     EvtPlacementCompletePressed.Invoke();
+    // }
 
     public void ButtonEvt_PlacementReset()
     {
