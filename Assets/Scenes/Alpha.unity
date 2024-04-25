@@ -15469,7 +15469,7 @@ MonoBehaviour:
   portalPreviewPrefab: {fileID: 8144463827092971437, guid: 2851548f60d97514dbfb74a9a195b673,
     type: 3}
   numberOfPoints: 20
-  beltwidth: 0.2
+  beltwidth: 0.05
   beltPrefab: {fileID: 9162313609256931870, guid: 24a373507e650e44cbe387745da2af46,
     type: 3}
   belt: {fileID: 0}
