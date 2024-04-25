@@ -22,9 +22,11 @@ public class GoodbyeState : BaseState
 
     private void OnNextYokai()
     {
-        GameStateMachine.Instance.YokaiManager.DestroyCurrentYokai();
-        GameStateMachine.Instance.LetterBallHandler.ResetAll();
-        GameStateMachine.Instance.CookingManager.ResetAll();
+        if (GameStateMachine.Instance.YokaiManager.DestroyCurrentYokai())
+        {
+            GameStateMachine.Instance.LetterBallHandler.ResetAll();
+            GameStateMachine.Instance.CookingManager.ResetAll();
+        }
         if (GameStateMachine.Instance.YokaiManager.InstantiateYokai())
         {
             GameStateMachine.Instance.GoToOrderState();

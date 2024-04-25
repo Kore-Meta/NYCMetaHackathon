@@ -27,14 +27,17 @@ public class PlacementState : BaseState
     {
         if (!GameStateMachine.Instance.ConveyorBeltBuilder.isBeltBuilt)
         {
+            ViewController.Instance.SetPlacementComplete(false);
             return;
         }
+        ViewController.Instance.SetPlacementComplete(true);
         GameStateMachine.Instance.CookingManager.DisableChefStationGrabbable();
         GameStateMachine.Instance.AdvanceState();
     }
 
     private void OnPlacementReset()
     {
+        ViewController.Instance.SetPlacementComplete(false);
         GameStateMachine.Instance.ConveyorBeltBuilder.Reset();
     }
 }
