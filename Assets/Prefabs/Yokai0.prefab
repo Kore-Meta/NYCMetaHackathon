@@ -1918,7 +1918,7 @@ GameObject:
   - component: {fileID: 8924838099306845831}
   - component: {fileID: 7432624588443992839}
   m_Layer: 0
-  m_Name: YokaiPlaceholder0
+  m_Name: Yokai0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1964,9 +1964,9 @@ MonoBehaviour:
   servePanel: {fileID: 194331419024269240}
   goodbyePanel: {fileID: 2299490681187835897}
   onboardingAudio: {fileID: 8300000, guid: 17ee1bd5c57d496488f0f6d2205e54b9, type: 3}
-  orderAudio: {fileID: 0}
-  serveAudio: {fileID: 0}
-  goodbyeAudio: {fileID: 0}
+  orderAudio: {fileID: 8300000, guid: 447201fd27409444fae4c4399a2e4180, type: 3}
+  serveAudio: {fileID: 8300000, guid: 5a5814099ca4b3d46976fe5f87ea5d69, type: 3}
+  goodbyeAudio: {fileID: 8300000, guid: f94c039a2e2588f419797949fe4da8a6, type: 3}
   audioSource: {fileID: 6494047600490080969}
   EvtOnFoodReceived:
     m_PersistentCalls:
@@ -1990,8 +1990,8 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 2.0767164
-  m_Center: {x: 3.1382763, y: 1.6399169, z: 0.045697242}
+  m_Radius: 2.1689022
+  m_Center: {x: -2.3537347, y: 1.2875226, z: 0.04569739}
 --- !u!1001 &3811330955763703919
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2023,12 +2023,12 @@ PrefabInstance:
     - target: {fileID: 5497703949293945628, guid: 66da1d75bcb5d334e826cc5537c383a3,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.165
+      value: -2.42
       objectReference: {fileID: 0}
     - target: {fileID: 5497703949293945628, guid: 66da1d75bcb5d334e826cc5537c383a3,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.657
+      value: 1.28
       objectReference: {fileID: 0}
     - target: {fileID: 5497703949293945628, guid: 66da1d75bcb5d334e826cc5537c383a3,
         type: 3}
@@ -2038,17 +2038,17 @@ PrefabInstance:
     - target: {fileID: 5497703949293945628, guid: 66da1d75bcb5d334e826cc5537c383a3,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7741203
+      value: -0.3420201
       objectReference: {fileID: 0}
     - target: {fileID: 5497703949293945628, guid: 66da1d75bcb5d334e826cc5537c383a3,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5497703949293945628, guid: 66da1d75bcb5d334e826cc5537c383a3,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.6330385
+      value: 0.9396927
       objectReference: {fileID: 0}
     - target: {fileID: 5497703949293945628, guid: 66da1d75bcb5d334e826cc5537c383a3,
         type: 3}
@@ -2063,7 +2063,7 @@ PrefabInstance:
     - target: {fileID: 5497703949293945628, guid: 66da1d75bcb5d334e826cc5537c383a3,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 78.549
+      value: 220
       objectReference: {fileID: 0}
     - target: {fileID: 5497703949293945628, guid: 66da1d75bcb5d334e826cc5537c383a3,
         type: 3}
