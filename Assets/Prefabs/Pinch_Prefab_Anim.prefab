@@ -15,7 +15,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8942443331979079885
 Transform:
   m_ObjectHideFlags: 0
@@ -48,13 +48,14 @@ GameObject:
   - component: {fileID: 6943480270055122180}
   - component: {fileID: 5716550782991218033}
   - component: {fileID: 5288887267646559071}
+  - component: {fileID: 3982839199475276088}
   m_Layer: 0
   m_Name: hand_relax_002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &366617361975566011
 Transform:
   m_ObjectHideFlags: 0
@@ -142,6 +143,27 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -7503911520150766801, guid: a44ceabe3b33f1344a37a34908088e16, type: 3}
+--- !u!95 &3982839199475276088
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3261192255455526740}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 73fdfb3f005c2eb40b2089ac5d0da82d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4248434388036646678
 GameObject:
   m_ObjectHideFlags: 0
@@ -325,6 +347,7 @@ GameObject:
   - component: {fileID: 9132507989802740455}
   - component: {fileID: 2717061762855341115}
   - component: {fileID: 44448050415855458}
+  - component: {fileID: 7935526602937567658}
   m_Layer: 0
   m_Name: hand_rised_001
   m_TagString: Untagged
@@ -419,6 +442,27 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 3737225527356067919, guid: df549bb3bb248be4bb9d50e3ebab1bd9, type: 3}
+--- !u!95 &7935526602937567658
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5176368071324695155}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 271052686d89b914cb5191cad8ec53a3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &6394478325872685555
 GameObject:
   m_ObjectHideFlags: 0
@@ -431,13 +475,14 @@ GameObject:
   - component: {fileID: 6549608181965922230}
   - component: {fileID: 2108255830610547719}
   - component: {fileID: 8837925524151587133}
+  - component: {fileID: 669094120345062868}
   m_Layer: 0
   m_Name: hand_pinch_003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1704431339868963013
 Transform:
   m_ObjectHideFlags: 0
@@ -525,6 +570,27 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 420345238836407230, guid: a2d742e9ef183094daf2ed239841edba, type: 3}
+--- !u!95 &669094120345062868
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6394478325872685555}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 85fa99c301005e640b0f429182c1487c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7401768138959532019
 GameObject:
   m_ObjectHideFlags: 0
