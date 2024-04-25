@@ -50,6 +50,7 @@ public class LetterSocket : MonoBehaviour
         {
             letterBall.gameObject.SetActive(false);
             letterBall = null;
+            GetComponent<MeshRenderer>().material = originalMat;
         }
         japaneseLetter = JapaneseLetter.Null;
     }
