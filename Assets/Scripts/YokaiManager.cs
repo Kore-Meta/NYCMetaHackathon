@@ -70,13 +70,15 @@ public class YokaiManager : MonoBehaviour
         timer = 0;
     }
 
-    public void DestroyCurrentYokai()
+    public bool DestroyCurrentYokai()
     {
         if (yokai != null)
         {
             Destroy(yokai.gameObject);
             ind++;
+            return true;
         }
+        return false;
     }
 
     public QuestionSO GetCurrentQuestion()

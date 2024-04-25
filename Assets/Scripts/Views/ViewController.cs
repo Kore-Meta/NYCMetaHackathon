@@ -24,6 +24,8 @@ public class ViewController : MonoBehaviour
     public ServeView ServeView => serveView;
     public GoodbyeView GoodbyeView => goodbyeView;
 
+    private bool isPlacementComplete = false;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -75,7 +77,8 @@ public class ViewController : MonoBehaviour
 
             case GameStateName.Placement:
                 placementView.EvtPlacementCompletePressed.Invoke();
-                _currentState = GameStateName.Order;
+                if (isPlacementComplete)
+                    _currentState = GameStateName.Order;
                 Debug.Log("hello" + _currentState);
                 break;
 
@@ -103,5 +106,10 @@ public class ViewController : MonoBehaviour
             default:
                 break;
         }
+    }
+
+    public void SetPlacementComplete(bool newBool)
+    {
+        isPlacementComplete = newBool;
     }
 }
