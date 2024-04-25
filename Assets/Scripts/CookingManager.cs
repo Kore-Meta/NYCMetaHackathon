@@ -102,6 +102,11 @@ public class CookingManager : MonoBehaviour
 
     public void Cook()
     {
+        if (questionSO == null)
+        {
+            return;
+        }
+
         if (useVoice)
         {
             dictationActivation.ToggleActivation();

@@ -36,6 +36,7 @@ public class Yokai : MonoBehaviour
         if (other.gameObject.tag == "Dish")
         {
             EvtOnFoodReceived.Invoke();
+            Destroy(other.gameObject);
         }
     }
 

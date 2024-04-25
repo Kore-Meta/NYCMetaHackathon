@@ -6,11 +6,14 @@ public class LetterSocket : MonoBehaviour
 {
     public JapaneseLetter japaneseLetter;
     private LetterBall letterBall;
+    private Material originalMat;
+    public Material interactionMat;
 
     // Start is called before the first frame update
     void Start()
     {
         Reset();
+        originalMat = GetComponent<MeshRenderer>().material;
     }
 
     // Update is called once per frame
@@ -25,6 +28,7 @@ public class LetterSocket : MonoBehaviour
         {
             letterBall = other.gameObject.GetComponent<LetterBall>();
             japaneseLetter = letterBall.japaneseLetter;
+            GetComponent<MeshRenderer>().material = interactionMat;
             Debug.Log(japaneseLetter + " in");
         }
     }
@@ -36,6 +40,7 @@ public class LetterSocket : MonoBehaviour
             Debug.Log(japaneseLetter + " out");
             letterBall = null;
             japaneseLetter = JapaneseLetter.Null;
+            GetComponent<MeshRenderer>().material = originalMat;
         }
     }
 
