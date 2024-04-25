@@ -1678,6 +1678,9 @@ MonoBehaviour:
   yokais:
   - {fileID: 11400000, guid: 68a741c665d37494cae8f8e79305ea58, type: 2}
   - {fileID: 11400000, guid: f5c5bb4fdd63a8e4190632341adda9c2, type: 2}
+  portalPrefab: {fileID: 1670532729043986428, guid: bcd76f6e7033644a28dbb933b820e0f6,
+    type: 3}
+  moveTime: 2
 --- !u!1 &153151960
 GameObject:
   m_ObjectHideFlags: 0
