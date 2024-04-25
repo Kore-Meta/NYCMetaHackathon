@@ -892,6 +892,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   japaneseLetter: 0
+  interactionMat: {fileID: 2100000, guid: 6ada4c1fc00314c0eab5356f5dfbeb8a, type: 2}
 --- !u!1 &1589854137977364405
 GameObject:
   m_ObjectHideFlags: 0
@@ -1495,6 +1496,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   japaneseLetter: 0
+  interactionMat: {fileID: 2100000, guid: 6ada4c1fc00314c0eab5356f5dfbeb8a, type: 2}
 --- !u!1 &1900342010010004685
 GameObject:
   m_ObjectHideFlags: 0
@@ -4160,6 +4162,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   japaneseLetter: 0
+  interactionMat: {fileID: 2100000, guid: 6ada4c1fc00314c0eab5356f5dfbeb8a, type: 2}
 --- !u!1 &4402303734570758244
 GameObject:
   m_ObjectHideFlags: 0
@@ -4894,6 +4897,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   japaneseLetter: 0
+  interactionMat: {fileID: 2100000, guid: 6ada4c1fc00314c0eab5356f5dfbeb8a, type: 2}
 --- !u!1 &5235913163714341024
 GameObject:
   m_ObjectHideFlags: 0
@@ -6373,6 +6377,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   japaneseLetter: 0
+  interactionMat: {fileID: 2100000, guid: 6ada4c1fc00314c0eab5356f5dfbeb8a, type: 2}
 --- !u!1 &7520850479466539579
 GameObject:
   m_ObjectHideFlags: 0
