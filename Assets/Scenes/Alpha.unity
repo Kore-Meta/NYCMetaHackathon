@@ -15432,10 +15432,7 @@ MonoBehaviour:
   Evt_OnBeltDestroyed:
     m_PersistentCalls:
       m_Calls: []
-  _handTrackingManager: {fileID: 0}
-  meshLayerMask:
-    serializedVersion: 2
-    m_Bits: 64
+  rayInteractor: {fileID: 1419386196}
 --- !u!1 &1405596026
 GameObject:
   m_ObjectHideFlags: 0
