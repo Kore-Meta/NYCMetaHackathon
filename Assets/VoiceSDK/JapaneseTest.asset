@@ -17,7 +17,7 @@ MonoBehaviour:
     name: japanese_test
     id: 785644276828927
     lang: ja
-    isPrivate: 1
+    isPrivate: 0
     createdAt: 2024-04-16T09:07:17-0700
     trainingStatus: 1
     lastTrainDuration: 0
@@ -555,7 +555,7 @@ MonoBehaviour:
   - Oculus.Voice.Demo, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   - Meta.WitAi.Samples, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   relaxedResolution: 0
-  _lastRefreshSeconds: 1713620608.5138361
+  _lastRefreshSeconds: 1714101843.85286
 --- !u!114 &2538759912116689742
 MonoBehaviour:
   m_ObjectHideFlags: 0
