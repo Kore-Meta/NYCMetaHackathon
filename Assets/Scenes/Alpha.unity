@@ -1674,7 +1674,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60887fb3b98dcaa4c80632225107d81c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debugMode: 1
+  debugMode: 0
   yokais:
   - {fileID: 11400000, guid: 68a741c665d37494cae8f8e79305ea58, type: 2}
   - {fileID: 11400000, guid: f5c5bb4fdd63a8e4190632341adda9c2, type: 2}
@@ -19140,19 +19140,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3628976323835222495, guid: e850cd6543b384caa971ae63a262d457,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
-    - targetCorrespondingSourceObject: {fileID: 4808629647098017133, guid: e850cd6543b384caa971ae63a262d457,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
-    - targetCorrespondingSourceObject: {fileID: 7263274417185660988, guid: e850cd6543b384caa971ae63a262d457,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e850cd6543b384caa971ae63a262d457, type: 3}
 --- !u!1 &1745991929
 GameObject:

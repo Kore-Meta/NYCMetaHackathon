@@ -100,8 +100,8 @@ public class YokaiManager : MonoBehaviour
         }
         else if (ind == 0 && yokaiState == YokaiState.Order)
         {
-            Invoke("DelayedActivateOrder", 2);
-            return 8;
+            Invoke("DelayedActivateOrder", 0.5f);
+            return 7;
         }
         else if (ind > 0 && yokaiState == YokaiState.Order)
         {
