@@ -58,6 +58,8 @@ public class CookingManager : MonoBehaviour
     {
         dictationText = dictationText.Replace(" ", "")  // Remove spaces
                                    .Replace("，", "") // Remove comma
+                                   .Replace("。", "")
+                                   .Replace("？", "")
                                    .Replace("、", "") // Remove ideographic comma
                                    .Replace("；", ""); // Remove semicolon
         chefStation.cookButtonText.text = "You said:" + dictationText + "\n";
