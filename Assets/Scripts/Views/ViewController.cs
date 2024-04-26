@@ -24,6 +24,8 @@ public class ViewController : MonoBehaviour
     public ServeView ServeView => serveView;
     public GoodbyeView GoodbyeView => goodbyeView;
 
+    private bool isPlacementComplete = false;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -40,6 +42,12 @@ public class ViewController : MonoBehaviour
     void Start()
     {
         _currentState = GameStateName.MainMenu;
+
+        // TODO: this is just trying to fix UI position but there might be better ways
+        transform.position = Camera.main.transform.position + Camera.main.transform.forward * 1f;
+        transform.LookAt(Camera.main.transform);
+        transform.rotation *= Quaternion.Euler(0, 180, 0);
+        transform.position = new Vector3(transform.position.x, 1.5f, transform.position.z);
     }
 
     // Update is called once per frame
@@ -75,7 +83,8 @@ public class ViewController : MonoBehaviour
 
             case GameStateName.Placement:
                 placementView.EvtPlacementCompletePressed.Invoke();
-                _currentState = GameStateName.Order;
+                if (isPlacementComplete)
+                    _currentState = GameStateName.Order;
                 Debug.Log("hello" + _currentState);
                 break;
 
@@ -103,5 +112,11 @@ public class ViewController : MonoBehaviour
             default:
                 break;
         }
+    }
+
+    public void SetPlacementComplete(bool newBool)
+    {
+        isPlacementComplete = newBool;
+        //placementView.PlaySuccessAudio(); // TODO: putting it here also doesn't work
     }
 }

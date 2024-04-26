@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b3cca5c4cc0dc84da70d675be2aafd5, type: 3}
   m_Name: Yokai1
   m_EditorClassIdentifier: 
-  yokaiPrefab: {fileID: 8924838099306845831, guid: ac461448190317445be8e66eb999976c,
+  yokaiPrefab: {fileID: 8924838099306845831, guid: 02d9e6c5dc1ca431abb32f53acbec48e,
     type: 3}
-  question: {fileID: 11400000, guid: a32711667e2ee894b8dc2a931c7e5d23, type: 2}
+  question: {fileID: 11400000, guid: 158ac84cb9b2845fba95d0908f647f31, type: 2}

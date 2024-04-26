@@ -9,9 +9,15 @@ public class YokaiManager : MonoBehaviour
 
     public YokaiSO[] yokais;
 
+    public MultiversePortal portalPrefab;
+    private MultiversePortal portal;
+
     private int ind;
     private Vector3 instantiatePos;
     private Yokai yokai;
+
+    private float timer = 0;
+    public float moveTime = 2f;
 
     // Start is called before the first frame update
     void Start()
@@ -31,18 +37,49 @@ public class YokaiManager : MonoBehaviour
         {
             return false;
         }
-        instantiatePos = Camera.main.transform.position + new Vector3(0, 0, 0.8f);
-        yokai = Instantiate(yokais[ind].yokaiPrefab, instantiatePos, Quaternion.identity);
+        if (ind == 0)
+        {
+            // TODO: instantiation loc is hard coded for now
+            portal = Instantiate(portalPrefab, Vector3.zero, Quaternion.identity);
+            instantiatePos = new Vector3(Camera.main.transform.position.x, 0.8f, Camera.main.transform.position.z) + Camera.main.transform.forward * 2f;
+            portal.transform.position = instantiatePos;
+            portal.transform.LookAt(new Vector3(Camera.main.transform.position.x, portal.transform.position.y, Camera.main.transform.position.z));
+        }
+        portal.PlayEngineAudio();
+        StartCoroutine(Co_InstantiateYokai());
         return true;
     }
 
-    public void DestroyCurrentYokai()
+    IEnumerator Co_InstantiateYokai()
+    {
+        yield return new WaitForSeconds(2);
+
+        yokai = Instantiate(yokais[ind].yokaiPrefab, portal.centerTransform.position, Quaternion.identity);
+        yokai.transform.LookAt(new Vector3(Camera.main.transform.position.x, yokai.transform.position.y, Camera.main.transform.position.z));
+        yokai.DisableAllPanels();
+        Vector3 startPosition = portal.centerTransform.position;
+        Vector3 endPosition = Camera.main.transform.position + Camera.main.transform.forward * 1f;
+
+        while (timer < moveTime)
+        {
+            yokai.transform.position = Vector3.Lerp(startPosition, endPosition, timer / moveTime);
+            timer += Time.deltaTime;
+            yield return null;
+        }
+
+        transform.position = endPosition;
+        timer = 0;
+    }
+
+    public bool DestroyCurrentYokai()
     {
         if (yokai != null)
         {
             Destroy(yokai.gameObject);
             ind++;
+            return true;
         }
+        return false;
     }
 
     public QuestionSO GetCurrentQuestion()
@@ -52,13 +89,54 @@ public class YokaiManager : MonoBehaviour
 
     public float ActivateYokaiState(YokaiState yokaiState)
     {
-        float time = yokai.ActivateState(yokaiState);
-        if (debugMode)
+        if (yokaiState == YokaiState.Onboarding)
         {
-            time = 5;
+            Invoke("DelayedActivateOnboarding", 4);
+            if (debugMode)
+            {
+                return 5;
+            }
+            return 23;
         }
-        //yokai.Invoke("DisableAllPanels", time);
-        return time;
+        else if (ind == 0 && yokaiState == YokaiState.Order)
+        {
+            Invoke("DelayedActivateOrder", 0.5f);
+            return 7;
+        }
+        else if (ind > 0 && yokaiState == YokaiState.Order)
+        {
+            Invoke("DelayedActivateOrder", 4);
+            return 6;
+        }
+        else if (yokaiState == YokaiState.WaitToBeServed)
+        {
+            Invoke("DelayedActivateServe", 2);
+            return 2;
+        }
+        else
+        {
+            float timer = yokai.ActivateState(yokaiState);
+            if (debugMode)
+            {
+                timer = 5;
+            }
+            return timer;
+        }
+    }
+
+    private void DelayedActivateOnboarding()
+    {
+        yokai.ActivateState(YokaiState.Onboarding);
+    }
+
+    private void DelayedActivateOrder()
+    {
+        yokai.ActivateState(YokaiState.Order);
+    }
+
+    private void DelayedActivateServe()
+    {
+        yokai.ActivateState(YokaiState.WaitToBeServed);
     }
 
     public void AddOnFoodReceivedEvt(UnityEvent evt)
