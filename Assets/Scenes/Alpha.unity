@@ -1674,7 +1674,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60887fb3b98dcaa4c80632225107d81c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debugMode: 1
+  debugMode: 0
   yokais:
   - {fileID: 11400000, guid: 68a741c665d37494cae8f8e79305ea58, type: 2}
   - {fileID: 11400000, guid: f5c5bb4fdd63a8e4190632341adda9c2, type: 2}
@@ -7070,37 +7070,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1187017131}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &706247956
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 706247957}
-  m_Layer: 0
-  m_Name: PlayButton
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &706247957
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 706247956}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &707285741
 GameObject:
@@ -13652,7 +13621,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ballPrefab: {fileID: 3552979177397532026, guid: ad242981b97d2486687c5aa6ed71d2e0,
     type: 3}
-  speed: 0.5
+  speed: 0.8
   interval: 4
   beltBuilder: {fileID: 1400487141}
   text4Debugging: {fileID: 1339958230}
@@ -15503,7 +15472,7 @@ MonoBehaviour:
   portalPreviewPrefab: {fileID: 8144463827092971437, guid: 2851548f60d97514dbfb74a9a195b673,
     type: 3}
   numberOfPoints: 20
-  beltwidth: 0.05
+  beltwidth: 0.08
   beltPrefab: {fileID: 9162313609256931870, guid: 24a373507e650e44cbe387745da2af46,
     type: 3}
   belt: {fileID: 0}
@@ -22296,6 +22265,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2025009213}
   - component: {fileID: 2025009212}
+  - component: {fileID: 2025009214}
   m_Layer: 0
   m_Name: BGM
   m_TagString: Untagged
@@ -22317,7 +22287,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.03
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -22414,6 +22384,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2025009214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2025009211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc3115f71c5841078600752259d33fd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lockPositionToListener: 0
+  width: 13
+  height: 6
+  depth: 15
+  leftMaterial: 18
+  rightMaterial: 18
+  ceilingMaterial: 18
+  floorMaterial: 33
+  frontMaterial: 18
+  backMaterial: 18
+  clutterFactor: 0.2
 --- !u!1 &2025987488
 GameObject:
   m_ObjectHideFlags: 0
@@ -23944,5 +23937,4 @@ SceneRoots:
   - {fileID: 1222958283}
   - {fileID: 850251133}
   - {fileID: 329825932}
-  - {fileID: 706247957}
   - {fileID: 2025009213}
