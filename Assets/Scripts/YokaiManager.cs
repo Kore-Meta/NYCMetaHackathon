@@ -39,8 +39,9 @@ public class YokaiManager : MonoBehaviour
         }
         if (ind == 0)
         {
+            // TODO: instantiation loc is hard coded for now
             portal = Instantiate(portalPrefab, Vector3.zero, Quaternion.identity);
-            instantiatePos = new Vector3(Camera.main.transform.position.x, portal.GetHeightAboveGround(), Camera.main.transform.position.z) + Camera.main.transform.forward * 2f;
+            instantiatePos = new Vector3(Camera.main.transform.position.x, 0.8f, Camera.main.transform.position.z) + Camera.main.transform.forward * 2f;
             portal.transform.position = instantiatePos;
             portal.transform.LookAt(new Vector3(Camera.main.transform.position.x, portal.transform.position.y, Camera.main.transform.position.z));
         }
@@ -91,12 +92,26 @@ public class YokaiManager : MonoBehaviour
         if (yokaiState == YokaiState.Onboarding)
         {
             Invoke("DelayedActivateOnboarding", 4);
+            if (debugMode)
+            {
+                return 5;
+            }
+            return 23;
+        }
+        else if (ind == 0 && yokaiState == YokaiState.Order)
+        {
+            Invoke("DelayedActivateOrder", 2);
             return 8;
         }
         else if (ind > 0 && yokaiState == YokaiState.Order)
         {
             Invoke("DelayedActivateOrder", 4);
             return 6;
+        }
+        else if (yokaiState == YokaiState.WaitToBeServed)
+        {
+            Invoke("DelayedActivateServe", 2);
+            return 2;
         }
         else
         {
@@ -117,6 +132,11 @@ public class YokaiManager : MonoBehaviour
     private void DelayedActivateOrder()
     {
         yokai.ActivateState(YokaiState.Order);
+    }
+
+    private void DelayedActivateServe()
+    {
+        yokai.ActivateState(YokaiState.WaitToBeServed);
     }
 
     public void AddOnFoodReceivedEvt(UnityEvent evt)

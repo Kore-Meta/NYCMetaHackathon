@@ -30,6 +30,7 @@ public class PlacementState : BaseState
             ViewController.Instance.SetPlacementComplete(false);
             return;
         }
+        //ViewController.Instance.PlacementView.PlaySuccessAudio(); // TODO: idk why this doesn't work
         ViewController.Instance.SetPlacementComplete(true);
         GameStateMachine.Instance.CookingManager.DisableChefStationGrabbable();
         GameStateMachine.Instance.AdvanceState();
