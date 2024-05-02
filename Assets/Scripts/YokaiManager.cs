@@ -41,7 +41,7 @@ public class YokaiManager : MonoBehaviour
         {
             // TODO: instantiation loc is hard coded for now
             portal = Instantiate(portalPrefab, Vector3.zero, Quaternion.identity);
-            instantiatePos = new Vector3(Camera.main.transform.position.x, 0.8f, Camera.main.transform.position.z) + Camera.main.transform.forward * 2f;
+            instantiatePos = new Vector3(Camera.main.transform.position.x, 0.5f, Camera.main.transform.position.z) + Camera.main.transform.forward * 2f;
             portal.transform.position = instantiatePos;
             portal.transform.LookAt(new Vector3(Camera.main.transform.position.x, portal.transform.position.y, Camera.main.transform.position.z));
         }
@@ -55,7 +55,7 @@ public class YokaiManager : MonoBehaviour
         yield return new WaitForSeconds(2);
 
         yokai = Instantiate(yokais[ind].yokaiPrefab, portal.centerTransform.position, Quaternion.identity);
-        yokai.transform.LookAt(new Vector3(Camera.main.transform.position.x, yokai.transform.position.y, Camera.main.transform.position.z));
+        yokai.transform.LookAt(new Vector3(Camera.main.transform.position.x, 0.5f, Camera.main.transform.position.z));
         yokai.DisableAllPanels();
         Vector3 startPosition = portal.centerTransform.position;
         Vector3 endPosition = Camera.main.transform.position + Camera.main.transform.forward * 1f;

@@ -38,7 +38,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 3.52}
+  m_AnchoredPosition: {x: 0, y: 3.26}
   m_SizeDelta: {x: 756, y: 849}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &7019318992925142181
@@ -265,7 +265,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5162b5f06848d63408a55b33294f6fe7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d88f98aec10bbce448f1859401a70310, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -275,6 +275,37 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &730216144690414564
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4519149831056803133}
+  m_Layer: 0
+  m_Name: SpeechBubbleWBG
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &4519149831056803133
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 730216144690414564}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.19, z: 3.5800002}
+  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6633716275435633046}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1044196563926445705
 GameObject:
   m_ObjectHideFlags: 0
@@ -340,7 +371,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5162b5f06848d63408a55b33294f6fe7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d88f98aec10bbce448f1859401a70310, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -385,7 +416,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 39.6, y: 72.8}
-  m_SizeDelta: {x: 888.7, y: 853.9}
+  m_SizeDelta: {x: 900, y: 853.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2202299590324339167
 CanvasRenderer:
@@ -420,7 +451,7 @@ MonoBehaviour:
     can use the letters of the Japanese alphabet to cook and deliver delicious meals.\r\n\rLet's
     create our conveyor belt sushi restaurant."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: e7838f4a9869aad48bd614c842bca360, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -484,7 +515,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 5.032287}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &1739658533678140601
@@ -730,7 +761,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5162b5f06848d63408a55b33294f6fe7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d88f98aec10bbce448f1859401a70310, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -759,7 +790,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1547431872330383079
 RectTransform:
   m_ObjectHideFlags: 0
@@ -778,7 +809,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 3.52}
+  m_AnchoredPosition: {x: 0, y: 3.11}
   m_SizeDelta: {x: 756, y: 849}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &871427480792187521
@@ -940,6 +971,37 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &3881845137834932918
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8146209400985144292}
+  m_Layer: 0
+  m_Name: SpeechBubbleWBG
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &8146209400985144292
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3881845137834932918}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.19, z: 3.5800002}
+  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6633716275435633046}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4389265875002724680
 GameObject:
   m_ObjectHideFlags: 0
@@ -1106,6 +1168,68 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6633716275435633046}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5334723586699964513
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3434066742750021999}
+  m_Layer: 0
+  m_Name: SpeechBubbleWBG
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &3434066742750021999
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5334723586699964513}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.19, z: 3.5800002}
+  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6633716275435633046}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5478960885351588040
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8963927775465180310}
+  m_Layer: 0
+  m_Name: SpeechBubbleWBG
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &8963927775465180310
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5478960885351588040}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.19, z: 3.5800002}
+  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6633716275435633046}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5607408488789381519
 GameObject:
   m_ObjectHideFlags: 0
@@ -1144,7 +1268,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0.457, y: 5.097}
+  m_AnchoredPosition: {x: 0.457, y: 4.33}
   m_SizeDelta: {x: 1225.559, y: 1507.971}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &7643673396048752080
@@ -1371,7 +1495,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5162b5f06848d63408a55b33294f6fe7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d88f98aec10bbce448f1859401a70310, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1744,7 +1868,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 1.155, y: 4.614}
+  m_AnchoredPosition: {x: 1.155, y: 4.05}
   m_SizeDelta: {x: 1238.719, y: 1306.237}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &421854458770884526
@@ -1945,6 +2069,10 @@ Transform:
   - {fileID: 8696263769033237363}
   - {fileID: 7320346656775391057}
   - {fileID: 9094731716722779552}
+  - {fileID: 3434066742750021999}
+  - {fileID: 4519149831056803133}
+  - {fileID: 8963927775465180310}
+  - {fileID: 8146209400985144292}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8924838099306845831
@@ -2023,32 +2151,32 @@ PrefabInstance:
     - target: {fileID: 5497703949293945628, guid: 66da1d75bcb5d334e826cc5537c383a3,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.42
+      value: -3.33
       objectReference: {fileID: 0}
     - target: {fileID: 5497703949293945628, guid: 66da1d75bcb5d334e826cc5537c383a3,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.28
+      value: -1.37
       objectReference: {fileID: 0}
     - target: {fileID: 5497703949293945628, guid: 66da1d75bcb5d334e826cc5537c383a3,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.07
+      value: 0.54
       objectReference: {fileID: 0}
     - target: {fileID: 5497703949293945628, guid: 66da1d75bcb5d334e826cc5537c383a3,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.3420201
+      value: -0.6416217
       objectReference: {fileID: 0}
     - target: {fileID: 5497703949293945628, guid: 66da1d75bcb5d334e826cc5537c383a3,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5497703949293945628, guid: 66da1d75bcb5d334e826cc5537c383a3,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.9396927
+      value: 0.76702124
       objectReference: {fileID: 0}
     - target: {fileID: 5497703949293945628, guid: 66da1d75bcb5d334e826cc5537c383a3,
         type: 3}
@@ -2063,7 +2191,7 @@ PrefabInstance:
     - target: {fileID: 5497703949293945628, guid: 66da1d75bcb5d334e826cc5537c383a3,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 220
+      value: 259.826
       objectReference: {fileID: 0}
     - target: {fileID: 5497703949293945628, guid: 66da1d75bcb5d334e826cc5537c383a3,
         type: 3}
